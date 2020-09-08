@@ -1,5 +1,7 @@
 'use strict';
 
+const { json } = require('body-parser');
+
 module.exports = function (app) {
     var jsonku = require('./controller');
 
@@ -18,4 +20,7 @@ module.exports = function (app) {
 
     app.route('/ubah')
         .put(jsonku.ubahdata);
+
+    app.route('/hapus')
+        .delete(jsonku.hapusdata);
 }
